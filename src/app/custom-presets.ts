@@ -1,7 +1,7 @@
 import { type TweakCNThemePreset } from "@fakhrirafiki/theme-engine";
 
-// 🎨 Custom theme presets for testing
-export const customPresets: Record<string, TweakCNThemePreset> = {
+// Custom theme presets (example)
+export const customPresets = {
   "my-brand-1": {
     label: "Professional Blue (Default)",
     styles: {
@@ -12,13 +12,13 @@ export const customPresets: Record<string, TweakCNThemePreset> = {
         background: "#F9FAFB",
         foreground: "#0A0F2D",
 
-        card: "#ffffff", // ✅ beda tipis dari putih
+        card: "#ffffff", //  beda tipis dari putih
         "card-foreground": "#0A0F2D",
 
         popover: "#ffffff",
         "popover-foreground": "#0A0F2D",
 
-        // ⭐ Primary — sedikit lebih cerah, tidak mirip Fazz
+        //  Primary  sedikit lebih cerah, tidak mirip Fazz
         primary: "#0E52E8",
         "primary-hover": "#0C47D1",
         "primary-active": "#0A3EB5",
@@ -30,14 +30,14 @@ export const customPresets: Record<string, TweakCNThemePreset> = {
         muted: "#F5F7FA",
         "muted-foreground": "#6A7A95",
 
-        // ⭐ Accent — airy, friendly, beda brand tone
+        //  Accent  airy, friendly, beda brand tone
         accent: "#EAF2FF",
         "accent-foreground": "#0E52E8",
 
         destructive: "#E11D48",
         "destructive-foreground": "#ffffff",
 
-        // ⭐ Soft neutral border (premium, tidak keras)
+        //  Soft neutral border (premium, tidak keras)
         border: "#E4E7EB",
         input: "#E4E7EB",
         ring: "#0E52E8",
@@ -46,7 +46,7 @@ export const customPresets: Record<string, TweakCNThemePreset> = {
         "text-muted-foreground": "#6A7A95",
         "text-primary-foreground": "#0E52E8",
 
-        // ⭐ Status colors (lebih enterprise, kurang saturated)
+        //  Status colors (lebih enterprise, kurang saturated)
         "accent-success": "#23C07A",
         "accent-success-foreground": "#0A0F2D",
 
@@ -77,18 +77,18 @@ export const customPresets: Record<string, TweakCNThemePreset> = {
         spacing: "0.27rem",
         radius: "1.4rem",
 
-        // ⭐ Background baru — lebih deep, beda tone dari Fazz
+        //  Background baru  lebih deep, beda tone dari Fazz
         background: "#0D1320",
         foreground: "#F9FAFB",
 
-        // ⭐ Card lebih naik 3–4 luminance step dari bg
+        //  Card lebih naik 34 luminance step dari bg
         card: "#131C2D",
         "card-foreground": "#F9FAFB",
 
         popover: "#131C2D",
         "popover-foreground": "#F9FAFB",
 
-        // ⭐ Primary — sama seperti light (consistency)
+        //  Primary  sama seperti light (consistency)
         primary: "#0E52E8",
         "primary-hover": "#0C47D1",
         "primary-active": "#0A3EB5",
@@ -100,14 +100,14 @@ export const customPresets: Record<string, TweakCNThemePreset> = {
         muted: "#1A2A40",
         "muted-foreground": "#A0AEC0",
 
-        // ⭐ Accent — cool navy, tidak terlalu biru
+        //  Accent  cool navy, tidak terlalu biru
         accent: "#15263E",
         "accent-foreground": "#F9FAFB",
 
         destructive: "#F87171",
         "destructive-foreground": "#0F1525",
 
-        // ⭐ Border dark — lebih terlihat sedikit dari versi lama
+        //  Border dark  lebih terlihat sedikit dari versi lama
         border: "#1A2A40",
         input: "#1E3A66",
         ring: "#0E52E8",
@@ -116,7 +116,7 @@ export const customPresets: Record<string, TweakCNThemePreset> = {
         "text-muted-foreground": "#A5B4CF",
         "text-primary-foreground": "#58AEFF",
 
-        // ⭐ Status colors — tone lebih soft & tidak memecah UI
+        //  Status colors  tone lebih soft & tidak memecah UI
         "accent-success": "#1FA45C",
         "accent-success-foreground": "#0F1525",
 
@@ -228,10 +228,10 @@ export const customPresets: Record<string, TweakCNThemePreset> = {
         radius: "0.5rem",
         spacing: "0.25rem",
 
-        background: "#0d0f12", // 🧊 FIX: tidak lagi coklat
+        background: "#0d0f12", //  FIX: tidak lagi coklat
         foreground: "#e4e4e7",
 
-        card: "#121418", //  🧊 cool slate
+        card: "#121418", //   cool slate
         "card-foreground": "#e4e4e7",
 
         popover: "#121418",
@@ -252,7 +252,7 @@ export const customPresets: Record<string, TweakCNThemePreset> = {
         destructive: "#b91c1c",
         "destructive-foreground": "#ffffff",
 
-        border: "#26282c", // 🧊 cool gray, bukan brown
+        border: "#26282c",
         input: "#1c1e22",
         ring: "#e64780",
 
@@ -298,4 +298,4 @@ export const customPresets: Record<string, TweakCNThemePreset> = {
       },
     },
   },
-};
+} satisfies Record<string, TweakCNThemePreset>;

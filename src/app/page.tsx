@@ -8,8 +8,7 @@ export default function Home() {
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 -z-10"
         style={{
-          background:
-            "radial-gradient(1000px circle at 50% -200px, hsl(var(--primary) / 0.18), transparent 60%)",
+          background: "radial-gradient(1000px circle at 50% -200px, hsl(var(--primary) / 0.18), transparent 60%)",
         }}
       />
 
@@ -19,12 +18,9 @@ export default function Home() {
         <section className="mt-12 space-y-3">
           <div className="text-center">
             <h2 className="text-base font-semibold tracking-tight">Try Presets</h2>
-            <p className="mt-1 text-sm text-muted-foreground">
-              Click any preset below to apply. Custom presets show up first.
-            </p>
           </div>
 
-          <div className="rounded-2xl border border-border bg-card px-3 py-4 shadow-sm">
+          <div className="rounded-2xl border border-border bg-card p-10 shadow-sm">
             <ThemePresetButtons
               maxPresets={30}
               animation={{ enabled: true, rowCount: 3, scrollSpeed: 0.6, hoverPause: true }}

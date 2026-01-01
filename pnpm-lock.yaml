@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@fakhrirafiki/theme-engine':
-        specifier: ^0.4.15
-        version: 0.4.15(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+        specifier: ^0.4.19
+        version: 0.4.19(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       next:
         specifier: 16.1.1
         version: 16.1.1(@babel/core@7.28.5)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
@@ -166,8 +166,8 @@ packages:
     resolution: {integrity: sha512-43/qtrDUokr7LJqoF2c3+RInu/t4zfrpYdoSDfYyhg52rwLV6TnOvdG4fXm7IkSB3wErkcmJS9iEhjVtOSEjjA==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@fakhrirafiki/theme-engine@0.4.15':
-    resolution: {integrity: sha512-8COkhfdDdJqjIGBka12WCC1dfel0wvYypm+TFdwNS0GbL6bgyhZL3JBic4885xtaFjXphe/K90F6IdzifP2O5A==}
+  '@fakhrirafiki/theme-engine@0.4.19':
+    resolution: {integrity: sha512-2ZmkGIwufqguXC0EJo9OxJj+JBPgrH+ja55oe0eScCUm2U1lmLDOV9x6GbBO1UF4Mcrw5f8SWZJ4DK1rpdc9qg==}
     peerDependencies:
       react: '>=18.0.0'
       react-dom: '>=18.0.0'
@@ -2083,7 +2083,7 @@ snapshots:
       '@eslint/core': 0.17.0
       levn: 0.4.1
 
-  '@fakhrirafiki/theme-engine@0.4.15(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
+  '@fakhrirafiki/theme-engine@0.4.19(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
     dependencies:
       clsx: 2.1.1
       react: 19.2.3

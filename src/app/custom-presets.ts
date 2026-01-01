@@ -3,7 +3,7 @@ import { type TweakCNThemePreset } from "@fakhrirafiki/theme-engine";
 // Custom theme presets (example)
 export const customPresets = {
   "my-brand-1": {
-    label: "Professional Blue (Default)",
+    label: "My Brand 1 (Default)",
     styles: {
       light: {
         spacing: "0.27rem",
@@ -146,7 +146,7 @@ export const customPresets = {
   },
 
   "my-brand-2": {
-    label: "Premium Pink",
+    label: "My Brand 2",
     styles: {
       light: {
         radius: "0.5rem",

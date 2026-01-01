@@ -9,7 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "@fakhrirafiki/theme-engine": "^0.4.15",
+    "@fakhrirafiki/theme-engine": "^0.4.19",
     "next": "16.1.1",
     "react": "19.2.3",
     "react-dom": "19.2.3"

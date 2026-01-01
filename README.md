@@ -2,8 +2,8 @@
 
 Minimal Next.js app that demonstrates how to use `@fakhrirafiki/theme-engine`.
 
-- Main documentation: `https://github.com/fakhrirafiki/theme-engine`
-- npm package: `https://www.npmjs.com/package/@fakhrirafiki/theme-engine`
+- NPM package: `https://www.npmjs.com/package/@fakhrirafiki/theme-engine`
+- Source code: `https://github.com/fakhrirafiki/theme-engine-example`
 
 ## Run locally
 

@@ -1,13 +1,15 @@
 "use client";
 
-import { ThemePresets, useThemeEngine } from "@fakhrirafiki/theme-engine";
+import { ThemePresets, ThemeToggle, useThemeEngine } from "@fakhrirafiki/theme-engine";
 import type { ReactNode } from "react";
 import { customPresets } from "./custom-presets";
+import { ThemePresetSelect } from "./components/ThemePresetSelect";
+import Button from "./components/Button";
 
 type PresetRegistry = ThemePresets<typeof customPresets>;
 
 const LINKS = {
-  github: "https://github.com/fakhrirafiki/theme-engine.git",
+  github: "https://github.com/fakhrirafiki/theme-engine-example.git",
   npm: "https://www.npmjs.com/package/@fakhrirafiki/theme-engine",
 } as const;
 
@@ -41,35 +43,8 @@ function NpmIcon() {
   );
 }
 
-function Button({
-  children,
-  onClick,
-  pressed = false,
-  variant = "outline",
-}: {
-  children: ReactNode;
-  onClick: () => void;
-  pressed?: boolean;
-  variant?: "solid" | "outline";
-}) {
-  const base =
-    "inline-flex h-9 items-center justify-center rounded-md px-3 text-sm font-medium transition-colors outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background";
-
-  const className =
-    variant === "solid"
-      ? `${base} bg-primary text-primary-foreground hover:opacity-90`
-      : `${base} border border-border bg-background text-foreground hover:bg-accent ${pressed ? "bg-accent" : ""}`;
-
-  return (
-    <button type="button" className={className} onClick={onClick}>
-      {children}
-    </button>
-  );
-}
-
 export function ThemeDemo() {
-  const { mode, resolvedMode, setDarkMode, toggleDarkMode, currentPreset, clearTheme } =
-    useThemeEngine<PresetRegistry>();
+  const { mode, resolvedMode, setDarkMode, currentPreset, clearTheme } = useThemeEngine<PresetRegistry>();
 
   const presetId = currentPreset?.presetName ?? "";
 
@@ -95,23 +70,29 @@ export function ThemeDemo() {
           <div className="space-y-3">
             <div className="text-sm font-medium">Mode</div>
             <div className="flex flex-wrap gap-2">
-              <Button pressed={mode === "system"} onClick={() => setDarkMode("system")}>
+              <Button
+                variant={mode === "system" ? "solid" : "outline"}
+                pressed={mode === "system"}
+                onClick={() => setDarkMode("system")}
+              >
                 System
               </Button>
-              <Button pressed={mode === "light"} onClick={() => setDarkMode("light")}>
+              <Button
+                variant={mode === "light" ? "solid" : "outline"}
+                pressed={mode === "light"}
+                onClick={() => setDarkMode("light")}
+              >
                 Light
               </Button>
-              <Button pressed={mode === "dark"} onClick={() => setDarkMode("dark")}>
+              <Button
+                variant={mode === "dark" ? "solid" : "outline"}
+                pressed={mode === "dark"}
+                onClick={() => setDarkMode("dark")}
+              >
                 Dark
               </Button>
-              <Button
-                variant="solid"
-                onClick={() => {
-                  toggleDarkMode();
-                }}
-              >
-                Toggle
-              </Button>
+
+              <ThemeToggle />
             </div>
             <div className="text-xs text-muted-foreground">
               mode: <span className="font-mono">{mode}</span> · resolved:{" "}
@@ -119,7 +100,20 @@ export function ThemeDemo() {
             </div>
           </div>
 
-          <div className="grid gap-3 sm:grid-cols-2">
+          <div className="sm:col-span-1 space-y-4">
+            <ThemePresetSelect allowedPresetIds={["my-brand-1", "my-brand-2", "violet-bloom", "supabase", "claude"]} />
+
+            <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+              <div className="text-xs text-muted-foreground">
+                active preset: <span className="font-mono">{presetId || "default"}</span>
+              </div>
+              <div className="flex gap-2">
+                <Button onClick={() => clearTheme()}>Reset preset</Button>
+              </div>
+            </div>
+          </div>
+
+          <div className="grid gap-3 grid-cols-2 sm:col-span-2">
             <div className="rounded-lg border border-border bg-background p-4">
               <div className="text-sm font-medium">Surface</div>
               <div className="mt-2 text-sm text-muted-foreground">
@@ -132,20 +126,6 @@ export function ThemeDemo() {
               <div className="mt-2 text-sm opacity-90">
                 Uses semantic tokens: <span className="font-mono">bg-primary</span>,{" "}
                 <span className="font-mono">text-primary-foreground</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="sm:col-span-2">
-            <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-              <div className="text-xs text-muted-foreground">
-                active preset: <span className="font-mono">{presetId || "default"}</span>
-              </div>
-              <div className="flex gap-2">
-                <Button onClick={() => clearTheme()}>Reset preset</Button>
-                <LinkPill href={LINKS.github} icon={<GithubIcon />}>
-                  GitHub
-                </LinkPill>
               </div>
             </div>
           </div>
